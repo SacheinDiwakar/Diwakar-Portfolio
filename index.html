@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diwakar K — Regional Sales Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #7cfc9a;
+      --green-dim: rgba(124,252,154,0.4);
+      --green-faint: rgba(124,252,154,0.08);
+      --bg: #0a0a0f;
+      --bg-dark-green: #071a0c;
+      --hero-green: #0f2b14;
+      --text: #e8e6e0;
+      --text-primary: #f0ede6;
+      --text-muted: rgba(232,230,224,0.5);
+      --text-dim: rgba(232,230,224,0.35);
+      --border: rgba(255,255,255,0.08);
+      --border-green: rgba(124,252,154,0.25);
+      --surface: rgba(255,255,255,0.03);
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-display);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-family: var(--font-mono);
+      font-size: 30px;
+      color: var(--green);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      position:relative;
+      padding: 80px 80px 72px;
+      border-bottom: 0.5px solid var(--border);
+      overflow: hidden;
+    }
+
+    .hero-bg-green {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 58%;
+      background: var(--hero-green);
+      z-index: 0;
+    }
+
+    .hero-bg-fade {
+      position: absolute;
+      top: 28%; left: 0; right: 0;
+      height: 50%;
+      background: linear-gradient(to bottom, var(--hero-green) 0%, var(--bg) 100%);
+      z-index: 1;
+    }
+
+    .hero-gloss {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 58%;
+      opacity: 0.2;
+      background: radial-gradient(ellipse at 65% 0%, var(--green) 0%, transparent 70%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position:relative;
+      z-index: 20;
+      max-width: 100%;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--green);
+      border: 0.5px solid var(--green);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+      letter-spacing: 0.06em;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    h1 {
+      font-size: 58px;
+      font-weight: 900;
+      line-height: 1.40;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      animation: fadeUp 0.7s 0.1s ease both;
+      max-width: 100%;
+    }
+
+    h1 span { color: var(--green); }
+
+    .hero-role {
+      display: flex;
+      width: 100%;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--green);
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+      animation: fadeUp 0.7s 0.15s ease both;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 100%;
+      line-height: 1.8;
+      margin-bottom: 32px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: var(--bg);
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 26px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-resume {
+      background: transparent;
+      color: var(--green);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 12px 22px;
+      border-radius: 8px;
+      border: 0.5px solid rgba(124,252,154,0.5);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    .btn-resume:hover { background: rgba(124,252,154,0.08); border-color: var(--green); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px 26px;
+      border-radius: 8px;
+      border: 0.5px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.5); }
+
+    /* STATS */
+    .stats-row {
+      display: flex;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .stat {
+      flex: 1;
+      padding: 22px 24px;
+      border-right: 0.5px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 3px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 48px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 30px;
+      color: white;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    /* ABOUT */
+    .about-bio {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 28px;
+      max-width: 100%;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .about-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .about-card-title {
+      font-size: 13px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .about-card-text {
+      font-size: 16px;
+      color: rgba(232,230,224,0.65);
+      line-height: 1.5;
+    }
+
+    /* EDUCATION */
+    .edu-timeline { display: flex; flex-direction: column; }
+
+    .edu-item {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 28px;
+    }
+    .edu-item:last-child { padding-bottom: 0; }
+
+    .edu-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 14px;
+    }
+
+    .edu-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .edu-line {
+      width: 1px;
+      background: var(--border);
+      flex: 1;
+      margin-top: 6px;
+    }
+    .edu-item:last-child .edu-line { display: none; }
+
+    .edu-year {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--green);
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .edu-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .edu-sub {
+      font-size: 16px;
+      color: rgba(232,230,224,0.45);
+    }
+
+    /* EXPERIENCE */
+    .exp-section { padding: 48px 48px 0; border-bottom: 0.5px solid var(--border); }
+
+    .exp-panel-wrap { position: relative; }
+
+    .exp-panel {
+      display: none;
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 32px 28px;
+      border: 0.5px solid var(--border-green);
+    }
+    .exp-panel.active { display: block; }
+
+    .exp-panel-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: var(--bg-dark-green);
+    }
+
+    .exp-panel-gloss {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse at 15% 10%, rgba(124,252,154,0.24) 0%, transparent 60%),
+        radial-gradient(ellipse at 85% 85%, rgba(124,252,154,0.12) 0%, transparent 55%);
+    }
+
+    .exp-panel-inner { position: relative; z-index: 2; }
+
+    .exp-role {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.015em;
+      margin-bottom: 6px;
+    }
+
+    .exp-company {
+      font-size: 13px;
+      color: var(--green);
+      font-family: var(--font-mono);
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .exp-period {
+      font-size: 11px;
+      color: rgba(232,230,224,0.4);
+      font-family: var(--font-mono);
+      margin-bottom: 18px;
+    }
+
+    .exp-desc {
+      font-size: 14px;
+      color: rgba(232,230,224,0.68);
+      line-height: 1.8;
+      margin-bottom: 18px;
+      max-width: 100%;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .exp-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 4px 11px;
+      border-radius: 4px;
+      border: 0.5px solid rgba(124,252,154,0.25);
+      color: rgba(124,252,154,0.75);
+      background: rgba(124,252,154,0.05);
+    }
+
+    /* Timeline nav */
+    .exp-timeline-nav {
+      display: flex;
+      align-items: flex-start;
+      padding: 28px 0 36px;
+      position: relative;
+    }
+
+    .exp-timeline-nav::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 5%;
+      right: 5%;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .exp-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      padding: 0 6px;
+      transition: all 0.2s;
+    }
+
+    .exp-nav-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(124,252,154,0.3);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s;
+    }
+
+    .exp-nav-dot-inner {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(124,252,154,0.3);
+      transition: all 0.25s;
+    }
+
+    .exp-nav-item.active .exp-nav-dot { border-color: var(--green); background: rgba(124,252,154,0.1); }
+    .exp-nav-item.active .exp-nav-dot-inner { background: var(--green); }
+    .exp-nav-item:hover .exp-nav-dot { border-color: rgba(124,252,154,0.7); }
+
+    .exp-nav-label {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-dim);
+      text-align: center;
+      letter-spacing: 0.04em;
+      transition: color 0.25s;
+      line-height: 1.5;
+    }
+
+    .exp-nav-item.active .exp-nav-label { color: var(--green); }
+    .exp-nav-item:hover .exp-nav-label { color: rgba(232,230,224,0.7); }
+
+    .exp-nav-year {
+      font-size: 13px;
+      color: rgba(232,230,224,0.25);
+      font-family: var(--font-mono);
+      text-align: center;
+    }
+
+    .exp-nav-item.active .exp-nav-year { color: rgba(124,252,154,0.5); }
+
+    /* SKILLS */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .skill-tag {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 0.5px solid var(--border);
+      color: rgba(232,230,224,0.7);
+      background: var(--surface);
+    }
+
+    .skill-tag.highlight {
+      border-color: rgba(124,252,154,0.4);
+      color: var(--green);
+      background: rgba(124,252,154,0.06);
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .cert-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .cert-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(124,252,154,0.1);
+      border: 0.5px solid var(--border-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--green);
+      flex-shrink: 0;
+      font-weight: 500;
+    }
+
+    .cert-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .cert-issuer {
+      font-size: 16px;
+      color: rgba(232,230,224,0.4);
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .contact-item {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      transition: border-color 0.2s;
+      text-decoration: none;
+      display: block;
+    }
+
+    .contact-item:hover { border-color: var(--border-green); }
+
+    .contact-item-label {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      color: var(--green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .contact-item-val {
+      font-size: 18px;
+      color: rgba(232,230,224,0.65);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-copy {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--green); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 14px; }
+      h1 { font-size: 38px; }
+      .hero, section, .exp-section { padding-left: 20px; padding-right: 20px; }
+      .stats-row { flex-wrap: wrap; }
+      .stat { min-width: 50%; }
+      .about-grid { grid-template-columns: 1fr 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">Diwakar Kumaresan</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg-green"></div>
+    <div class="hero-bg-fade"></div>
+    <div class="hero-gloss"></div>
+    <div class="hero-content">
+      <div class="hero-tag">25+ years of sales excellence</div>
+      <h1>Diwakar <span>Kumaresan</span></h1>
+      <div class="hero-role">Regional Sales Manager</div>
+      <p class="hero-sub">Result-oriented sales leader with over 25 years of experience in Sales, Marketing, Channel Development, Distribution, and Dealer Development. Expert in building high-performance teams, acquiring customers, and driving consistent revenue growth across competitive markets.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Get in touch</a>
+        <a href="Diwakar_Resume.pdf" target="_blank" download class="btn-resume">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 1v8M4 6l3 3 3-3M2 11h10" stroke="#7cfc9a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Download Resume
+        </a>
+        <a href="#experience" class="btn-outline">View experience</a>
+      </div>
+    </div>
+  </div>
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">25+</div><div class="stat-label">years experience</div></div>
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">team members led</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">industries spanned</div></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label"><strong>About</strong></div>
+    <p class="about-bio">A result oriented professional with over 20 years experience in Sales and Marketing, Channel Development, Distribution, Dealer Development and Engagement. Extensive experience in Customer Acquisition, Deliverables and building teams. An effective communicator with relationship management, people skills & problem solving skills.</p>
+    <div class="about-grid">
+      <div class="about-card"><div class="about-card-title">based in</div><div class="about-card-text">Chennai, Tamil Nadu, India</div></div>
+      <div class="about-card"><div class="about-card-title">industries</div><div class="about-card-text">Steel · Agriculture · Automobile · Finance · Industrial</div></div>
+      <div class="about-card"><div class="about-card-title">languages</div><div class="about-card-text">Tamil · English · Hindi</div></div>
+      <div class="about-card"><div class="about-card-title">contact</div><div class="about-card-text">diwa1978@gmail.com</div></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <!-- EDUCATION -->
+<section id="education">
+  <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:32px;">
+    
+    <!-- LEFT: timeline -->
+    <div style="flex:1;">
+      <div class="section-label"><strong>Education</strong></div>
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <div class="edu-left"><div class="edu-dot"></div><div class="edu-line"></div></div>
+          <div>
+            <div class="edu-year">2016</div>
+            <div class="edu-title">MBA / PGDM</div>
+            <div class="edu-sub">Bhartiyar University, Coimbatore</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-left"><div class="edu-dot"></div><div class="edu-line"></div></div>
+          <div>
+            <div class="edu-year">2004</div>
+            <div class="edu-title">B.B.A / B.M.S</div>
+            <div class="edu-sub">Madras University</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-left"><div class="edu-dot"></div><div class="edu-line"></div></div>
+          <div>
+            <div class="edu-year">1995</div>
+            <div class="edu-title">XIIth — English</div>
+            <div class="edu-sub">Higher Secondary, St. Joseph's Higher Secondary School</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-left"><div class="edu-dot"></div><div class="edu-line"></div></div>
+          <div>
+            <div class="edu-year">1993</div>
+            <div class="edu-title">Xth — Tamil</div>
+            <div class="edu-sub">Secondary School, St. Joseph's Higher Secondary School</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: photo — replace your-photo.jpg with your image filename -->
+    <div style="flex-shrink:0; margin-top:8px;">
+      <img
+        src="Diwakar Photo.jpg"
+        alt="Diwakar K"
+        style="
+          width: 440px;
+          height: 500px;
+          object-fit: cover;
+          border-radius: 12px;
+          border: 0.5px solid rgba(124,252,154,0.25);
+          filter: grayscale(20%);
+        "
+      />
+    </div>
+
+  </div>
+</section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="exp-section" style="padding-bottom:0;">
+    <div class="section-label"><strong>Experience</strong></div>
+
+    <div class="exp-panel-wrap">
+
+      <div class="exp-panel active" id="exp-0">
+        <div class="exp-panel-bg"></div>
+        <div class="exp-panel-gloss"></div>
+        <div class="exp-panel-inner">
+          <div class="exp-role">Regional Sales Manager</div>
+          <div class="exp-company">Agni Steels</div>
+          <div class="exp-period">Mar 2019 – Present</div>
+          <div class="exp-desc">New Dealers Recruitment and Retail Sales Planning and Execution Working on the marketing activities to catch the customer New Dealers Engagement like Masons and Engineers meeting Geographical Dealer Network Planning and Execution Weekly tour plan with immediate reporting Sales Officers Schemes and Strategies Planning and report the same to the management Continues Market update and competitive analysis to meet competitor challenges Sales verses Receivables Statistics and working on continues improvement on the same Daily/weekly/monthly reporting and review process.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Dealer Recruitment</span>
+            <span class="exp-tag">Retail Sales</span>
+            <span class="exp-tag">Market Analysis</span>
+            <span class="exp-tag">Channel Network</span>
+            <span class="exp-tag">Receivables Management</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-panel" id="exp-1">
+        <div class="exp-panel-bg"></div>
+        <div class="exp-panel-gloss"></div>
+        <div class="exp-panel-inner">
+          <div class="exp-role">Regional Sales Manager</div>
+          <div class="exp-company">Gold Farm</div>
+          <div class="exp-period">Feb 2017 – Feb 2019</div>
+          <div class="exp-desc">Meets area sales financial objectives by forecasting requirements; preparing an annual budget; scheduling expenditures; analysing variances; initiating corrective actions Developed MOP (monthly operating plan), SOP (standard operating procedure) and CVP (customer value proposition) for all new vertical like farm mechanisation, farm tractors and implements and Solar water pump Establishes sales objectives by creating a sales plan and sales strategies for assigned districts Achieves regional Solar water pump sales operational objectives by contributing regional sales information and recommendations to strategic plans and reviews; preparing and completing action plans Crafted the Non collateral Loans to solar water pump customers by directly tie up with Nationalised Banks Created the spider dealer network to capture untapped digital market and penetrated through channel partner.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Budget Management</span>
+            <span class="exp-tag">Solar Water Pumps</span>
+            <span class="exp-tag">Farm Mechanisation</span>
+            <span class="exp-tag">Bank Tie-ups</span>
+            <span class="exp-tag">Dealer Network</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-panel" id="exp-2">
+        <div class="exp-panel-bg"></div>
+        <div class="exp-panel-gloss"></div>
+        <div class="exp-panel-inner">
+          <div class="exp-role">Area Sales Manager</div>
+          <div class="exp-company">Wuerth India</div>
+          <div class="exp-period">Sep 2013 – Jan 2017</div>
+          <div class="exp-desc">Plan and achieve targeted sales performance of the region Driving of Sr. Sales consultants and Sales consultants the team size of 50+ to maximise the sales Maximise the sales product wise Consumables, VAS, Tools and Equipments Maintain the Key Accounts and Manage the Business share of 40% from Key Customers Birds Eye view on competition and pricing and contest strategy Periodic audit on collection and regular review on receivables.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Team of 50+</span>
+            <span class="exp-tag">Key Accounts (40%)</span>
+            <span class="exp-tag">Consumables & Tools</span>
+            <span class="exp-tag">Pricing Strategy</span>
+            <span class="exp-tag">Collections</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-panel" id="exp-3">
+        <div class="exp-panel-bg"></div>
+        <div class="exp-panel-gloss"></div>
+        <div class="exp-panel-inner">
+          <div class="exp-role">Branch Sales Manager</div>
+          <div class="exp-company">Geojit BNP Paribas</div>
+          <div class="exp-period">Oct 2006 – Sep 2013</div>
+          <div class="exp-desc">PAN India Topper branch for generating high revenue Work with management team to identify and evaluate market, new target clients Work with management team to develop and implement strategic sales plan Identify and evaluate specific new profitable business opportunities Achieve own sales target and lead team to achieve team target and/or overall company target Initiate and complete proposals and presentation for new business opportunities Work with internal teams to deliver outstanding presentation to capture profitable business opportunity To maintain an excellent client relationship with existing and potential client.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">PAN India #1 Branch</span>
+            <span class="exp-tag">Strategic Sales Plan</span>
+            <span class="exp-tag">Client Relations</span>
+            <span class="exp-tag">New Business</span>
+            <span class="exp-tag">Financial Services</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-panel" id="exp-4">
+        <div class="exp-panel-bg"></div>
+        <div class="exp-panel-gloss"></div>
+        <div class="exp-panel-inner">
+          <div class="exp-role">Team Leader — Operations</div>
+          <div class="exp-company">Ford India Ltd.</div>
+          <div class="exp-period">Aug 1998 – Sep 2006</div>
+          <div class="exp-desc">Overseeing the production process, drawing up a production schedule Ensuring that the production is cost effective Making sure that products are produced on time and are of good quality Working out the human and material resources needed Drafting a timescale for the job ( Yamasumi) Estimating costs and setting the quality standards Monitoring the production processes and adjusting schedules as needed Monitoring product standards and implementing quality-control programs Liaising among different departments, e.g. Internal and External Vendors Working with managers to implement the company's policies and goals Ensuring that health and safety guidelines are followed.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Production Management</span>
+            <span class="exp-tag">Quality Control</span>
+            <span class="exp-tag">Yamasumi</span>
+            <span class="exp-tag">Ford Certified</span>
+            <span class="exp-tag">Vendor Management</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="exp-timeline-nav">
+      <div class="exp-nav-item active" onclick="switchExp(0)">
+        <div class="exp-nav-dot"><div class="exp-nav-dot-inner"></div></div>
+        <div class="exp-nav-label">Agni<br>Steels</div>
+        <div class="exp-nav-year">2019–now</div>
+      </div>
+      <div class="exp-nav-item" onclick="switchExp(1)">
+        <div class="exp-nav-dot"><div class="exp-nav-dot-inner"></div></div>
+        <div class="exp-nav-label">Gold<br>Farm</div>
+        <div class="exp-nav-year">2017–2019</div>
+      </div>
+      <div class="exp-nav-item" onclick="switchExp(2)">
+        <div class="exp-nav-dot"><div class="exp-nav-dot-inner"></div></div>
+        <div class="exp-nav-label">Wuerth<br>India</div>
+        <div class="exp-nav-year">2013–2017</div>
+      </div>
+      <div class="exp-nav-item" onclick="switchExp(3)">
+        <div class="exp-nav-dot"><div class="exp-nav-dot-inner"></div></div>
+        <div class="exp-nav-label">Geojit<br>BNP</div>
+        <div class="exp-nav-year">2006–2013</div>
+      </div>
+      <div class="exp-nav-item" onclick="switchExp(4)">
+        <div class="exp-nav-dot"><div class="exp-nav-dot-inner"></div></div>
+        <div class="exp-nav-label">Ford<br>India</div>
+        <div class="exp-nav-year">1998–2006</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS & CERTIFICATIONS -->
+  <section id="skills">
+    <div class="section-label"><strong>Skills</strong></div>
+    <div class="skills-grid">
+      <span class="skill-tag highlight">New Business Development</span>
+      <span class="skill-tag highlight">Strategic Planning</span>
+      <span class="skill-tag highlight">Channel Management</span>
+      <span class="skill-tag highlight">Key Account Management</span>
+      <span class="skill-tag highlight">Team Management</span>
+      <span class="skill-tag highlight">CRM</span>
+      <span class="skill-tag">Operations Management</span>
+      <span class="skill-tag">Profitability Analysis</span>
+      <span class="skill-tag">Turnaround Management</span>
+      <span class="skill-tag">Staff Training</span>
+      <span class="skill-tag">Negotiation</span>
+      <span class="skill-tag">Budgeting</span>
+      <span class="skill-tag">Forecasting</span>
+      <span class="skill-tag">Channel Sales</span>
+      <span class="skill-tag">Business Development</span>
+    </div>
+
+    <div class="section-label" style="margin-top:28px;"><strong>Certifications</strong></div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon">FD</div>
+        <div>
+          <div class="cert-name">Automobile Certified</div>
+          <div class="cert-issuer">Ford India Ltd. — Technical Training Dept., Ford Motor Company</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">AT</div>
+        <div>
+          <div class="cert-name">Basic Automobile Course</div>
+          <div class="cert-issuer">Advanced Training Institute, Chennai</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">MC</div>
+        <div>
+          <div class="cert-name">Mechanical &amp; Industrial Core Skills</div>
+          <div class="cert-issuer">M.C. Jain Technical Institute</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">MB</div>
+        <div>
+          <div class="cert-name">MBA / PGDM — Marketing &amp; Sales</div>
+          <div class="cert-issuer">Bhartiyar University, Coimbatore · 2016</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label"><strong>Contact</strong></div>
+    <div class="contact-grid">
+      <a class="contact-item" href="mailto:diwa1978@gmail.com">
+        <div class="contact-item-label">email</div>
+        <div class="contact-item-val">diwa1978@gmail.com</div>
+      </a>
+      <a class="contact-item" href="tel:+919789922253">
+        <div class="contact-item-label">phone</div>
+        <div class="contact-item-val">(+91) 9789922253</div>
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/diwakar-k514aab165/" target="_blank" rel="noopener">
+        <div class="contact-item-label">linkedin</div>
+        <div class="contact-item-val">linkedin.com/in/diwakar-k514aab165</div>
+      </a>
+      <div class="contact-item">
+        <div class="contact-item-label">location</div>
+        <div class="contact-item-val">Chennai, Tamil Nadu, India</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">© Apr 2026 · Sachein Diwakar Web Projects</span>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function switchExp(idx) {
+      document.querySelectorAll('.exp-panel').forEach((p, i) => {
+        p.classList.toggle('active', i === idx);
+      });
+      document.querySelectorAll('.exp-nav-item').forEach((n, i) => {
+        n.classList.toggle('active', i === idx);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('section, .stats-row').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
